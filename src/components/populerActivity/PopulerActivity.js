@@ -1,14 +1,15 @@
 import React from 'react'
 import Slider from 'react-slick'
-import './populerEvents.css'
+import './populerActivity.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdDateRange } from 'react-icons/md';
-import useFetch from './../../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
+import { Link } from 'react-router-dom';
 
 
-export default function PopulerEvents() {
-    const events = useFetch("/data/db.json", "events")
+export default function PopulerActivity() {
+    const activities = useFetch("/data/db.json", "activities")
     const categories = useFetch("/data/db.json", "categories")
 
     function dateToString(date) {
@@ -21,7 +22,7 @@ export default function PopulerEvents() {
         dots: true,
         infinite: true,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         autoplay: true,
         speed: 2000,
         autoplaySpeed: 3000,
@@ -60,14 +61,13 @@ export default function PopulerEvents() {
             <h2>En Popüler Etkinlikler </h2>
             <Slider {...settings}>
                 {
-                    events.data.map(event => (
+                    activities.data.map(event => (
                         <div className='event' key={event.id}>
                             {
                                 categories.data.map(category => {
                                     if (category.id == event.categoryId) {
-                                        console.log();
                                         return (
-                                            <div className='eventCategory' style={{ backgroundColor: category.color }}>{category.name}</div>
+                                            <div key={category.id} className='eventCategory' style={{ backgroundColor: category.color }}>{category.name}</div>
                                         )
                                     }
                                 })
@@ -84,7 +84,7 @@ export default function PopulerEvents() {
                                     </div>
                                 </div>
                                 <div className='eventAction'>
-                                    <a href={event.link}>İncele</a>
+                                    <Link to={`/etkinlik/${event.id}`}>İncele</Link>
                                 </div>
                             </div>
                         </div>

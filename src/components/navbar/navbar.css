@@ -3,11 +3,9 @@
     width: 100%;
     transition: var(--transition);
     z-index: 100;
+    background-color: var(--color-primary);
 }
 
-.navbarBg {
-    background: rgb(113, 165, 237);
-}
 
 .navbarContainer {
     display: flex;
@@ -19,10 +17,11 @@
 }
 
 .navbarContainer .navbarTitle {
-    flex: .5;
+    flex: 1;
 }
 
 .navbarContainer .navbarTitle h1 {
+    color: var(--color-white);
     font-size: 1.5rem;
 }
 
@@ -39,11 +38,12 @@
     display: flex;
     font-size: 1.2rem;
     transition: var(--transition);
+    color: var(--color-white);
+    border-bottom: 2px solid transparent;
 }
 
 .navbarContainer .navbarMenu ul li a:hover {
-    color: #fff;
-    text-decoration: underline;
+    border-bottom: 2px solid white;
 }
 
 .navbarContainer .navbarButtons {
@@ -51,12 +51,63 @@
 }
 
 .navbarContainer .navbarButtons a {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-variant);
     color: var(--color-white);
     float: right;
 
     padding: .5rem 1.5rem;
     border-radius: 25px;
+    transition: var(--transition);
+}
+
+.navbarContainer .navbarButtons a:hover {
+    background-color: rgb(113, 165, 237);
+}
+
+.mobileMenuIcon {
+    display: none;
+}
+
+.mobileMenu {
+    flex-direction: column;
+    width: 250px;
+    height: 89vh;
+    position: fixed;
+    right: -250px;
+
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: var(--transition);
+    border: 1px solid #fff;
+    border-radius: 1rem;
+}
+
+
+.mobileMenu .navbarMenu ul li a {
+    display: flex;
+    padding: 1rem;
+    color: rgb(113, 165, 237);
+}
+
+.mobileMenu .navbarMenu ul li a:hover {
+    background-color: rgb(113, 165, 237);
+    color: var(--color-white);
+    border-radius: 0rem 5rem 5rem 0rem;
+}
+
+.mobileMenu .navbarButtons a {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 1rem;
+    padding: .75rem;
+    color: var(--color-white);
+    background-color: var(--color-primary-variant);
+    border-radius: 5rem;
+    transition: var(--transition);
+}
+
+.mobileMenu .navbarButtons a:hover {
+    background-color: rgb(113, 165, 237);
 }
 
 /*=================================================================*/
@@ -64,7 +115,19 @@
 /*=================================================================*/
 
 @media screen and (max-width: 600px) {
-    .navbarContainer {
+
+    .navbarContainer .navbarMenu,
+    .navbarContainer .navbarButtons {
         display: none;
+    }
+
+    .mobileMenuIcon {
+        display: flex;
+        flex: .5;
+        justify-content: right;
+    }
+
+    .mobileMenu {
+        display: flex;
     }
 }

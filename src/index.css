@@ -9,10 +9,10 @@
 }
 
 :root {
-  --color-bg: #FAF9F8;
+  --color-bg: #F9F9F9;
   --color-bg-variant: #d8d8d8;
-  --color-primary: #0D1021;
-  --color-primary-variant: rgba(32, 12, 12, 0.4);
+  --color-primary: #071655;
+  --color-primary-variant: #394779;
   --color-white: #fff;
   --color-light: #a5a5a5;
 
@@ -40,6 +40,11 @@ body {
 /*=================================================================*/
 /*                      General Styles                          
 /*=================================================================*/
+.content {
+  width: var(--container-width-ms);
+  margin: 0 auto;
+  padding-top: 5rem;
+}
 
 .text-light {
   color: var(--color-light);
@@ -47,7 +52,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--color-primary-variant);
 }
 
 img {

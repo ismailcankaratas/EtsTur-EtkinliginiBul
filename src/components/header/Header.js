@@ -1,21 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './header.css'
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 
 import { MdDateRange } from 'react-icons/md';
-import { GrLocation } from 'react-icons/gr';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { BiCategory } from 'react-icons/bi';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import useFetch from '../../hooks/useFetch';
+import Select from 'react-select'
 
 export default function Header() {
     const categories = useFetch("/data/db.json", "categories");
     const localtions = useFetch("/data/db.json", "localtions");
 
+    const [categoriesOptions, setCategoriesOptions] = useState([]);
+    const [localtionsOptions, setLocaltionsOptions] = useState([]);
+
+    const [localtionSelect, setLocaltionSelect] = useState('');
+    const [categorySelect, setCategorySelect] = useState('');
     const [openDate, setOpenDate] = useState(false);
     const [date, setDate] = useState([
         {
@@ -24,6 +30,23 @@ export default function Header() {
             key: "selection",
         },
     ]);
+
+    useEffect(() => {
+        addOptions(categoriesOptions, categories.data, setCategoriesOptions);
+        addOptions(localtionsOptions, localtions.data, setLocaltionsOptions);
+    }, [localtions.data]);
+
+    const addOptions = (options, optionsData, optionsSet) => {
+        const newOptions = [...options]
+        optionsData.map(option => (
+            newOptions.push({ value: option.id, label: option.name })
+        ))
+        optionsSet(newOptions)
+    }
+    const handleSelectChange = (selectValue, setSelect) => {
+        setSelect(selectValue);
+    }
+
     return (
         <div className='headerContainer'>
             <div className='headerTitle'>
@@ -32,26 +55,18 @@ export default function Header() {
                     <br />
                     Bilet Satın Al
                 </h2>
+                <div className='headerImg'>
+                    <img src="/header.png" alt="" />
+                </div>
             </div>
+
 
             <div className="headerSearchContainer">
                 <div className='headerSearch'>
                     <div className="headerSearchItem">
                         <BiCategory className='icon' />
-                        <select>
-                            <option>Kategori seçiniz</option>
-                            {
-                                categories.data.map(category => (
-                                    <option value={category.id} key={category.id}>{category.name}</option>
-                                ))
-                            }
-                        </select>
-                        {/* <input
-                        type="text"
-                        placeholder="Where are you going?"
-                        className="headerSearchInput"
-                        onChange={(e) => setDestination(e.target.value)}
-                    /> */}
+                        <Select options={categoriesOptions} placeholder="Kategori seçiniz"
+                            onChange={(select) => handleSelectChange(select, setCategorySelect)} />
                     </div>
                     <div className="headerSearchItem">
                         <MdDateRange className='icon' />
@@ -74,23 +89,10 @@ export default function Header() {
                         )}
                     </div>
                     <div className="headerSearchItem">
-                        <GrLocation className='icon' />
-                        <select>
-                            <option>Konum</option>
-                            {
-                                localtions.data.map(localtion => (
-                                    <option value={localtion.id} key={localtion.id}>
-                                        {localtion.name}
-                                    </option>
-                                ))
-                            }
-                        </select>
-                        {/* <input
-                        type="text"
-                        placeholder="Where are you going?"
-                        className="headerSearchInput"
-                        onChange={(e) => setDestination(e.target.value)}
-                    /> */}
+                        <HiOutlineLocationMarker className='icon' />
+                        <Select options={localtionsOptions} placeholder="Konum seçiniz"
+                            onChange={(select) => handleSelectChange(select, setLocaltionSelect)}
+                        />
                     </div>
 
                     <div className="headerSearchItem" id='headerBtn'>

@@ -11,6 +11,10 @@
     display: none;
 }
 
+.eventSlider {
+    margin: 5rem 0rem;
+}
+
 .eventSlider h2 {
     padding: 1rem 0;
     font-weight: 600;

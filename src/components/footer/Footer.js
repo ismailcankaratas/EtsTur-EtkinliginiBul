@@ -20,7 +20,7 @@ export default function Footer() {
                     <ul>
                         {
                             categories.data.map(category => (
-                                <li>
+                                <li key={category.id}>
                                     <a href={`/${category.name}`}>{category.name}</a>
                                 </li>
                             ))

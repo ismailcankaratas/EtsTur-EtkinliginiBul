@@ -1,18 +1,32 @@
 .headerContainer {
     position: relative;
     padding: 7rem 0rem;
-    background: rgb(113, 165, 237);
-    background: linear-gradient(90deg, rgba(113, 165, 237, 0.8) 30%, rgba(121, 111, 246, 0.8) 60%, rgba(107, 252, 118, 0.8) 90%);
+    background-color: #071655;
 }
 
 .headerContainer .headerTitle {
+    display: flex;
+    align-items: center;
     width: var(--container-width-ms);
     margin: 0 auto;
+    color: var(--color-white);
 }
 
 .headerContainer .headerTitle h2 {
     font-size: 3rem;
     font-weight: 500;
+}
+
+.headerImg {
+    width: 20%;
+    margin-left: auto;
+    padding: 1rem;
+}
+
+.headerImg img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
 }
 
 .headerSearchContainer {
@@ -26,12 +40,11 @@
 
     justify-content: space-around;
     width: var(--container-width-ms);
-    background-color: var(--color-white);
+    background-color: var(--color-primary-variant);
     margin: 0 auto;
     border-radius: 1rem;
     padding: 1rem;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, .5);
     gap: 1rem;
 
 }
@@ -51,11 +64,13 @@
 
 .headerSearchText {
     cursor: pointer;
+    color: var(--color-white);
 }
 
 .headerSearchItem .icon {
     width: 20px;
     height: 20px;
+    color: var(--color-white);
 }
 
 .headerSearchItem select {
@@ -64,6 +79,11 @@
     cursor: pointer;
 
 }
+
+.headerSearchItem .css-6j8wv5-Input {
+    display: flex;
+}
+
 
 #headerBtn {
     flex: .5;
