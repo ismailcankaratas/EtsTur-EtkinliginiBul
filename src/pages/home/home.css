@@ -1,0 +1,56 @@
+.content {
+    width: var(--container-width-ms);
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.categories .category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-white);
+    aspect-ratio: 2;
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.categories .category:hover {
+    transform: scale(1.1);
+}
+
+#konser {
+    background-color: rgba(113, 165, 237, 0.8);
+}
+
+#standUp {
+    background-color: rgba(121, 111, 246, 0.8);
+}
+
+#tiyatro {
+    background-color: rgba(107, 252, 118, 0.8);
+}
+
+@media (max-width: 600px) {
+    .categories {
+        gap: 1rem
+    }
+
+}
+
+@media (max-width: 425px) {
+    .categories .category {
+        aspect-ratio: auto;
+    }
+}

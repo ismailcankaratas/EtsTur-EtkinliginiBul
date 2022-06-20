@@ -1,0 +1,70 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    transition: var(--transition);
+    z-index: 100;
+}
+
+.navbarBg {
+    background: rgb(113, 165, 237);
+}
+
+.navbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: var(--container-width-ms);
+    margin: 0 auto;
+}
+
+.navbarContainer .navbarTitle {
+    flex: .5;
+}
+
+.navbarContainer .navbarTitle h1 {
+    font-size: 1.5rem;
+}
+
+.navbarContainer .navbarMenu {
+    flex: 1;
+}
+
+.navbarContainer .navbarMenu ul {
+    display: flex;
+    gap: 3rem;
+}
+
+.navbarContainer .navbarMenu ul li a {
+    display: flex;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.navbarContainer .navbarMenu ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.navbarContainer .navbarButtons {
+    flex: .5;
+}
+
+.navbarContainer .navbarButtons a {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    float: right;
+
+    padding: .5rem 1.5rem;
+    border-radius: 25px;
+}
+
+/*=================================================================*/
+/*                      Media Queries (Small Devices)                         
+/*=================================================================*/
+
+@media screen and (max-width: 600px) {
+    .navbarContainer {
+        display: none;
+    }
+}

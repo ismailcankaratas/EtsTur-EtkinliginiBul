@@ -1,0 +1,92 @@
+.slick-list .slick-track {
+    display: flex;
+    gap: 1rem;
+}
+
+.slick-arrow .slick-prev {
+    display: none;
+}
+
+.slick-arrow .slick-next {
+    display: none;
+}
+
+.eventSlider h2 {
+    padding: 1rem 0;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.event {
+    position: relative;
+}
+
+.event img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.event .eventCategory {
+    position: absolute;
+    right: 0;
+    background: rgb(0, 0, 0, .8);
+    color: var(--color-white);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+
+.event .eventDetail {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+    background-color: var(--color-white);
+    bottom: -1rem;
+    gap: 1rem;
+}
+
+.event .eventDetail .eventInfo {
+    flex: 1;
+}
+
+.event .eventDetail .eventInfo .eventName {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+.event .eventDetail .eventInfo .eventDate {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .8rem;
+    color: var(--color-light);
+}
+
+.event .eventDetail .eventInfo .eventDate .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.event .eventDetail .eventAction a {
+    border: 1px solid var(--color-primary);
+    padding: 1rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.event .eventDetail .eventAction a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+
+@media (max-width: 425px) {
+    .event img {
+        aspect-ratio: .8;
+    }
+}
