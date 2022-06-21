@@ -79,7 +79,7 @@ export default function ActivitiesSlider({ activities, title, similarActivities 
                                     </div>
                                 </div>
                                 <div className='eventAction'>
-                                    <Link to={`/etkinlik/${event.id}`}>İncele</Link>
+                                    <Link to={process.env.PUBLIC_URL + `/etkinlik/${event.id}`}>İncele</Link>
                                 </div>
                             </div>
                         </div>

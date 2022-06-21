@@ -17,14 +17,14 @@ export default function Navbar() {
         <div className={`navbar`}>
             <div className='navbarContainer'>
                 <div className='navbarTitle'>
-                    <Link to="/">
+                    <Link to={process.env.PUBLIC_URL}>
                         <h1>Etkinliğini Bul</h1>
                     </Link>
                 </div>
                 <div className='navbarMenu'>
                     <ul>
                         <li>
-                            <Link to="/search">Bul</Link>
+                            <Link to={process.env.PUBLIC_URL + "/search"}>Bul</Link>
                         </li>
                         <li>
                             <Link to="#">Favoriler</Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
                 <div className='navbarMenu'>
                     <ul>
                         <li>
-                            <Link to="/search">Bul</Link>
+                            <Link to={process.env.PUBLIC_URL + "/search"}>Bul</Link>
                         </li>
                         <li>
                             <Link to="#">Favoriler</Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
                     <Link to="#">Kayıt Ol</Link>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }

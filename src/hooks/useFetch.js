@@ -10,7 +10,7 @@ const useFetch = (url, arrayName) => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const res = await axios.get(url);
+                const res = await axios.get(process.env.PUBLIC_URL + url);
                 setData(res.data[arrayName]);
             } catch (error) {
                 setError(error)
@@ -24,7 +24,7 @@ const useFetch = (url, arrayName) => {
     const reFetch = async () => {
         setLoading(true);
         try {
-            const res = await axios.get(url);
+            const res = await axios.get(process.env.PUBLIC_URL + url);
             setData(res.data[arrayName]);
         } catch (error) {
             setError(error)

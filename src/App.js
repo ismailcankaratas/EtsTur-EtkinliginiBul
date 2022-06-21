@@ -17,9 +17,9 @@ function App() {
       <ToastContainer />
       <Navbar />
       <Routes>
-        <Route index element={<Home />} />
-        <Route path='/etkinlik/:id' element={<Activity />} />
-        <Route path='/search' element={<Search />} />
+        <Route path={process.env.PUBLIC_URL} element={<Home />} />
+        <Route path={process.env.PUBLIC_URL + '/etkinlik/:id'} element={<Activity />} />
+        <Route path={process.env.PUBLIC_URL + '/search'} element={<Search />} />
       </Routes>
       <Footer />
     </>

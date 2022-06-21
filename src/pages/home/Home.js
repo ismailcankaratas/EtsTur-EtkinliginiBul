@@ -13,13 +13,13 @@ export default function Home() {
       <Header />
       <div className='content'>
         <div className='categories'>
-          <Link to='/search?localtionId=&categoryId=DRxvz293sl&startDate=&endDate=' className='category' id='konser'>
+          <Link to={process.env.PUBLIC_URL + '/search?localtionId=&categoryId=DRxvz293sl&startDate=&endDate='} className='category' id='konser'>
             KONSER
           </Link>
-          <Link to='/search?localtionId=&categoryId=Ulu2KgoWfw&startDate=&endDate=' className='category' id='standUp'>
+          <Link to={process.env.PUBLIC_URL + '/search?localtionId=&categoryId=Ulu2KgoWfw&startDate=&endDate='} className='category' id='standUp'>
             STAND UP
           </Link>
-          <Link to='/search?localtionId=&categoryId=b5Pdw5_W2r&startDate=&endDate=' className='category' id='tiyatro'>
+          <Link to={process.env.PUBLIC_URL + '/search?localtionId=&categoryId=b5Pdw5_W2r&startDate=&endDate='} className='category' id='tiyatro'>
             TİYATRO
           </Link>
         </div>
