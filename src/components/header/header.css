@@ -120,4 +120,8 @@
     .headerSearchMobile {
         display: flex;
     }
+
+    .headerImg {
+        display: none;
+    }
 }

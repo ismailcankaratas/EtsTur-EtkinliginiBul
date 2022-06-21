@@ -12,8 +12,16 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import useFetch from '../../hooks/useFetch';
 import Select from 'react-select'
+import { useNavigate } from "react-router-dom";
+import { errorNotification } from '../../App';
 
+export const handleSearchUrl = (localtionSelect, categorySelect, date) => {
+    const startDate = `${format(date[0].startDate, "MM/dd/yyyy")}`;
+    const endDate = `${format(date[0].endDate, "MM/dd/yyyy")}`;
+    return `/search?localtionId=${localtionSelect}&categoryId=${categorySelect}&startDate=${startDate}&endDate=${endDate}`;
+}
 export default function Header() {
+    const navigate = useNavigate();
     const categories = useFetch("/data/db.json", "categories");
     const localtions = useFetch("/data/db.json", "localtions");
 
@@ -46,6 +54,14 @@ export default function Header() {
     const handleSelectChange = (selectValue, setSelect) => {
         setSelect(selectValue);
     }
+    const handleActivitySearch = (localtionSelect, categorySelect, date) => {
+        if (!categorySelect) return errorNotification("Kategori seçiniz.")
+        if (!localtionSelect) return errorNotification("Konum seçiniz.")
+        const localtionId = localtionSelect.value;
+        const categoryId = categorySelect.value;
+
+        navigate(handleSearchUrl(localtionId, categoryId, date))
+    }
 
     return (
         <div className='headerContainer'>
@@ -73,10 +89,12 @@ export default function Header() {
                         <span
                             onClick={() => setOpenDate(!openDate)}
                             className="headerSearchText"
-                        >{`${format(date[0].startDate, "MM/dd/yyyy")} - ${format(
-                            date[0].endDate,
-                            "MM/dd/yyyy"
-                        )}`}</span>
+                        >
+                            {`Tarih: ${format(date[0].startDate, "MM/dd/yyyy")} - ${format(
+                                date[0].endDate,
+                                "MM/dd/yyyy"
+                            )}`}
+                        </span>
                         {openDate && (
                             <DateRange
                                 editableDateInputs={true}
@@ -95,7 +113,7 @@ export default function Header() {
                         />
                     </div>
 
-                    <div className="headerSearchItem" id='headerBtn'>
+                    <div className="headerSearchItem" id='headerBtn' onClick={() => handleActivitySearch(localtionSelect, categorySelect, date)}>
                         <button className="headerBtn">
                             Ara
                         </button>

@@ -3,12 +3,12 @@
     gap: 1rem;
 }
 
-.slick-arrow .slick-prev {
+.slick-arrow {
     display: none;
 }
 
-.slick-arrow .slick-next {
-    display: none;
+.slick-next {
+    right: 0px !important;
 }
 
 .eventSlider {

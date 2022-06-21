@@ -8,16 +8,17 @@ import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
 
 
+export const dateToString = (date) => {
+    var tarih = new Date(date);
+    var gunler = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
+    var aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+    return `${tarih.getDate()} ${aylar[tarih.getMonth()]} ${gunler[tarih.getDay()]}`
+}
+
 export default function PopulerActivity() {
     const activities = useFetch("/data/db.json", "activities")
     const categories = useFetch("/data/db.json", "categories")
 
-    function dateToString(date) {
-        var tarih = new Date(date);
-        var gunler = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
-        var aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
-        return `${tarih.getDate()} ${aylar[tarih.getMonth()]} ${gunler[tarih.getDay()]}`
-    }
     const settings = {
         dots: true,
         infinite: true,

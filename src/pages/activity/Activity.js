@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './activity.css'
 import useFetch from './../../hooks/useFetch';
+import { dateToString } from '../../components/populerActivity/PopulerActivity';
+
 export default function Activity() {
     const params = useParams();
     const activities = useFetch("/data/db.json", "activities")
@@ -9,12 +11,6 @@ export default function Activity() {
     const localtions = useFetch("/data/db.json", "localtions")
     const activity = activities.data.find(x => x.id == params.id);
 
-    function dateToString(date) {
-        var tarih = new Date(date);
-        var gunler = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
-        var aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
-        return `${tarih.getDate()} ${aylar[tarih.getMonth()]} ${gunler[tarih.getDay()]}`
-    }
     return (
         <>
             {(activities.loading == false) ?

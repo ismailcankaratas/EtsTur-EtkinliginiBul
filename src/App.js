@@ -3,14 +3,23 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Activity from './pages/activity/Activity';
+import Search from './pages/search/Search';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+export const successNotification = (msg) => toast.success(msg);
+export const errorNotification = (msg) => toast.error(msg);
 
 function App() {
   return (
     <>
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route index element={<Home />} />
         <Route path='/etkinlik/:id' element={<Activity />} />
+        <Route path='/search' element={<Search />} />
       </Routes>
       <Footer />
     </>

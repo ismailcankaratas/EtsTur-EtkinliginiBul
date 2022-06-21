@@ -1,0 +1,124 @@
+.activitySearchContainer {
+    display: flex;
+    padding-top: 3rem;
+    gap: 3rem;
+}
+
+.activityFilters {
+
+    flex: .3;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 15%);
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.activityFilters .filterResult {
+    display: flex;
+    gap: .5rem;
+    border-bottom: 1px solid var(--color-bg-variant);
+    padding: 1rem;
+}
+
+.activityFilters .filterResult .resultTotal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(113, 165, 237);
+    color: var(--color-white);
+    width: 25px;
+    height: 25px;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-left: auto;
+}
+
+.activityFiltersSticky {
+    position: sticky;
+    top: 5rem;
+    transition: var(--transition);
+}
+
+
+.activityFilters .filterBody .filter {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    border-bottom: 1px solid var(--color-bg-variant);
+}
+
+.activityFilters .filterBody .filter .title {
+    font-weight: 450;
+    padding: .5rem 0rem;
+}
+
+.activityFilters .filterBody .filter .filterItem {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding-bottom: .5rem;
+}
+
+.activityFilters .filterBody .filter .filterItem input {
+    background-color: black;
+    padding: 1rem;
+}
+
+.filterSubmit {
+    background-color: rgb(113, 165, 237);
+    color: var(--color-white);
+    padding: 1rem 0rem;
+    border-radius: 0rem 0rem 6px 6px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.activitiesContainer {
+    flex: 1;
+}
+
+.activitiesContainer .activity {
+    display: flex;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 15%);
+    border-radius: 6px;
+    margin: 1rem 0rem;
+    transition: var(--transition);
+}
+
+.activitiesContainer .activity:hover {
+    transform: scale(1.04);
+}
+
+.activitiesContainer .activity .acitivtyImg {
+    flex: .5;
+}
+
+.activitiesContainer .activity .acitivtyImg img {
+    border-radius: 6px 0px 0px 6px;
+}
+
+.activityInfo {
+    flex: 2;
+    padding: 1rem;
+}
+
+.activityInfo h3 {
+    color: var(--color-primary);
+}
+
+.activityInfo span {
+    display: flex;
+    align-items: center;
+    margin: .5rem 0rem;
+}
+
+.activityInfo .category {
+    display: inline-flex;
+    background-color: rgb(113, 165, 237);
+    color: var(--color-white);
+    padding: .5rem 1rem;
+    font-size: .75rem;
+    border-radius: .5rem;
+}
