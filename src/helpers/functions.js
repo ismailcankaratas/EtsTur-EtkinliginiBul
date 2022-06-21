@@ -9,5 +9,5 @@ export const dateToString = (date) => {
 export const handleSearchUrl = (localtionSelect, categorySelect, date) => {
     const startDate = `${format(date[0].startDate, "MM/dd/yyyy")}`;
     const endDate = `${format(date[0].endDate, "MM/dd/yyyy")}`;
-    return `/search?localtionId=${localtionSelect}&categoryId=${categorySelect}&startDate=${startDate}&endDate=${endDate}`;
+    return `${process.env.PUBLIC_URL}/search?localtionId=${localtionSelect}&categoryId=${categorySelect}&startDate=${startDate}&endDate=${endDate}`;
 }
