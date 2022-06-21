@@ -1,0 +1,233 @@
+{
+    "localtions": [
+        {
+            "id": "uBH0jyxTz9",
+            "name": "İstanbul",
+            "places": [
+                {
+                    "id": "PD5Al6Dl_M",
+                    "name": "Turkcell Vadi"
+                },
+                {
+                    "id": "0dQk8NPDIu",
+                    "name": "Harbiye Cemil Topuzlu Açıkhava Sahnesi"
+                },
+                {
+                    "id": "L3hckriusq",
+                    "name": "KüçükÇiftlik Park"
+                }
+            ]
+        },
+        {
+            "id": "86yUHVIPEt",
+            "name": "Ankara",
+            "places": [
+                {
+                    "id": "YX4CCTM7ZG",
+                    "name": "IF Ankara Performance Hall"
+                },
+                {
+                    "id": "2QHAWdXiQP",
+                    "name": "CSO ADA Ankara Açık Alan(Tarihi Salon ÖnüAçıkhava)"
+                },
+                {
+                    "id": "mULvxQNxSB",
+                    "name": "Granma Pub MEŞRUTİYET MAHALLESİ/ OLGUNLAR SOKAK NO:59/13 ÇANKAYA/ANKARA"
+                }
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "id": "DRxvz293sl",
+            "name": "Konser",
+            "color": "rgba(113, 165, 237, 0.8)"
+        },
+        {
+            "id": "b5Pdw5_W2r",
+            "name": "Tiyatro",
+            "color": "rgba(107, 252, 118, 0.8)"
+        },
+        {
+            "id": "Ulu2KgoWfw",
+            "name": "Stand Up",
+            "color": "rgba(121, 111, 246, 0.8)"
+        }
+    ],
+    "activities": [
+        {
+            "id": "cJiM_Cc0R9",
+            "images": [
+                "https://kdaidggt0f3v.merlincdn.net/Uploads/Films/can-bonomo-202261011253.jpg"
+            ],
+            "ticketPrices": [
+                {
+                    "name": "A1 BLOK",
+                    "price": "300"
+                },
+                {
+                    "name": "A2 BLOK",
+                    "price": "200"
+                },
+                {
+                    "name": "B1 BLOK",
+                    "price": "100"
+                },
+                {
+                    "name": "B2 BLOK",
+                    "price": "50"
+                }
+            ],
+            "name": "Can Bonomo.",
+            "description": "Bilgi : Sahne Önü Ayakta (Erken Satış) & Sahne Önü Ayakta - I. Dönem kategorileri tükenmiştir. Yeni Bir Festival Coşkusu! %100 Müzik Sunar: DRILL DOWN! Rap müziğin en sevilen isimlerinin sahne alacağı DRILL DOWN! 14 Ağustos’ta KüçükÇiftlik Park’ta.  A New Festival Enthusiasm! %100 Music Presents: DRILL DOWN! DRILL DOWN! with the most popular names of rap music will be on August,14 at KüçükÇiftlik Park. ",
+            "localtionsId": "uBH0jyxTz9",
+            "placeId": "L3hckriusq",
+            "categoryId": "DRxvz293sl",
+            "date": "08/14/2022",
+            "hours": "16:00"
+        },
+        {
+            "id": "L79FbKQaX7",
+            "images": [
+                "https://kdaidggt0f3v.merlincdn.net/Uploads/Films/drill-down-20226811834.jpg"
+            ],
+            "ticketPrices": [
+                {
+                    "name": "A1 BLOK",
+                    "price": "300"
+                },
+                {
+                    "name": "A2 BLOK",
+                    "price": "200"
+                },
+                {
+                    "name": "B1 BLOK",
+                    "price": "100"
+                },
+                {
+                    "name": "B2 BLOK",
+                    "price": "50"
+                }
+            ],
+            "name": "Drill Down",
+            "description": "Yeni Bir Festival Coşkusu! %100 Müzik Sunar: DRILL DOWN! Rap müziğin en sevilen isimlerinin sahne alacağı DRILL DOWN! 14 Ağustos’ta KüçükÇiftlik Park’ta. ",
+            "localtionsId": "uBH0jyxTz9",
+            "placeId": "L3hckriusq",
+            "categoryId": "DRxvz293sl",
+            "date": "08/13/2022",
+            "hours": "21:00"
+        },
+        {
+            "id": "p953ubfon7",
+            "images": [
+                "https://kdaidggt0f3v.merlincdn.net/Uploads/Films/dany-brillant-202269171458.jpg"
+            ],
+            "ticketPrices": [
+                {
+                    "name": "A1 BLOK",
+                    "price": "300"
+                },
+                {
+                    "name": "A2 BLOK",
+                    "price": "200"
+                },
+                {
+                    "name": "B1 BLOK",
+                    "price": "100"
+                },
+                {
+                    "name": "B2 BLOK",
+                    "price": "50"
+                }
+            ],
+            "name": "Dany Brillant.",
+            "description": "Daniel Cohen-Biran ya da sahne adıyla Dany Brillant, Harbiye Cemil Topuzlu Açık Hava Sahnesi'nde sevenleriyle buluşuyor! Fransız pop şarkıcısı Dany Brillant, swing, rockabilly, Latin ve Fransız chanson etkilerinin canlı, retro aromalı karışımıyla Avrupa'da büyük bir hayran kitlesine sahip. Brillant 14 yaşındayken, büyükbabası tarafından kendisine bir gitar almasıyla müziğe başladı. 1996'da ilk albümü olan C'Est Toi'yi çıkardı; 1996 ve 2007 yılları arasında sekiz hit albüm çıkardı.2009'da salsa ve mambodan etkilenen Porto Riko albümünü çıkardı. 2012'de bir stüdyo albümü (Viens à Saint-Germain) ve ilk en iyi koleksiyonunu, kısaca The Best of Dany Brilliant'ı yayınladı.",
+            "localtionsId": "uBH0jyxTz9",
+            "placeId": "0dQk8NPDIu",
+            "categoryId": "DRxvz293sl",
+            "date": "08/13/2022",
+            "hours": "21:00"
+        },
+        {
+            "id": "Mq8uk3CGwS",
+            "images": [
+                "https://kdaidggt0f3v.merlincdn.net/Uploads/Films/hidra-202268174827.jpg"
+            ],
+            "ticketPrices": [
+                {
+                    "name": "A1 BLOK",
+                    "price": "300"
+                },
+                {
+                    "name": "A2 BLOK",
+                    "price": "200"
+                },
+                {
+                    "name": "B1 BLOK",
+                    "price": "100"
+                },
+                {
+                    "name": "B2 BLOK",
+                    "price": "50"
+                }
+            ],
+            "name": "Hidra",
+            "description": "2008 yılından beri rap müzik  yapan Hidra (Fatih Uslu) ilk olarak internet ortamında albümler çıkartmaya başladı. Bu albümleri Youtube’de paylaşan isim, gelen olumlu tepkilerle beraber albüm çalışmalarına başlamıştır.İlk albümünü 2010 yılında yayınlamıştır. “Gücüme Giden Yol” albümü ile dahageniş kitlelere adını duyurmuştur. Bu albümden sonra Canbeatz Music Projet isimli yarışmaya katılan Hidra, bu yarışmada birincilik elde etti ve arkasından ise Gerçek Yeraltı Rap yarışmasına katılarak 2. oldu. Ardından, “Nikotin Tedavisi” adını vermiş olduğu albümünü vakit kaybetmeden çıkarttı. Bu albümle ününü daha da arttırdı ve 2012 tarihinde “Grafit ve Kilin” albümü ile Türkiye’de adını duyurmayı başarmıştır. Hidra, 30 Haziran Perşembe akşamı IF Ankara Performance Hall'de sevenleriyle buluşuyor!",
+            "localtionsId": "86yUHVIPEt",
+            "placeId": "YX4CCTM7ZG",
+            "categoryId": "DRxvz293sl",
+            "date": "06/30/2022",
+            "hours": "21:00"
+        },
+        {
+            "id": "jrmOrtTiF2",
+            "images": [
+                "https://kdaidggt0f3v.merlincdn.net/Uploads/Films/yaz-sezonu-cocuk-etkinlikleri-bavulumda-kuklalar-muzikli-kukla-tiyatrosu-202267163831.png"
+            ],
+            "ticketPrices": [
+                {
+                    "name": "A1 BLOK",
+                    "price": "300"
+                },
+                {
+                    "name": "A2 BLOK",
+                    "price": "200"
+                },
+                {
+                    "name": "B1 BLOK",
+                    "price": "100"
+                },
+                {
+                    "name": "B2 BLOK",
+                    "price": "50"
+                }
+            ],
+            "name": "Yaz Sezonu Çocuk Etkinlikleri- Bavulumda Kuklalar Müzikli Kukla Tiyatrosu",
+            "description": "Birçok hikâyenin birleştiği bu oyunda her şey kendini ifade edebilmeye dayanıyor. Geri dönüşüm malzemelerinden yapılmış kuklalardan; Keloğlan ile yalan üzerine, Şipşak ile kıskançlık üzerine, Kartopu ve Mıstık ile iletişimin önemine dikkat çekerken sürpriz bir kukla ile eğleniyoruz. Keyifli müzikler ve şakalar ile oyunumuz hareketli ve eğlenceli bir şekilde son buluyor.",
+            "localtionsId": "86yUHVIPEt",
+            "placeId": "2QHAWdXiQP",
+            "categoryId": "b5Pdw5_W2r",
+            "date": "07/03/2022",
+            "hours": "17:00"
+        },
+        {
+            "id": "5wypX0KubP",
+            "images": [
+                "https://kdaidggt0f3v.merlincdn.net/Uploads/Films/ruya-aslangul-tek-kisilik-gosteri-lafazans-stand-up-20226214458.jpg"
+            ],
+            "ticketPrices": [
+                {
+                    "name": "A1 BLOK",
+                    "price": "ÜCRETSİZ"
+                }
+            ],
+            "name": "Rüya Aslangül - Tek Kişilik Gösteri – Lafazans Stand Up",
+            "description": "Ankara’nın tecrübeli komedyenlerinin yepyeni bir soluk getirerek oluşturduğu Lafazans ekibinden Rüya Aslangül, “Rüyanda mı Güldün?” adını verdiği tek kişilik stand up gösterisi ile sizlerle buluşuyor.",
+            "localtionsId": "86yUHVIPEt",
+            "placeId": "mULvxQNxSB",
+            "categoryId": "Ulu2KgoWfw",
+            "date": "06/22/2022",
+            "hours": "20:00"
+        }
+    ]
+}
