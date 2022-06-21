@@ -48,6 +48,45 @@
     border-radius: .5rem;
 }
 
+.eventHeader .eventWrapper .eventSummary .eventDetails .share {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.eventHeader .eventWrapper .eventSummary .eventDetails .share #whatsapp {
+    background-color: #128C7E;
+}
+
+.eventHeader .eventWrapper .eventSummary .eventDetails .share #whatsapp:hover {
+    background-color: #25D366;
+}
+
+.eventHeader .eventWrapper .eventSummary .eventDetails .share #twitter {
+    background-color: #1DA1F2;
+}
+
+.eventHeader .eventWrapper .eventSummary .eventDetails .share #twitter:hover {
+    background-color: #34B7F1;
+}
+
+.eventHeader .eventWrapper .eventSummary .eventDetails .share a {
+    display: flex;
+    font-size: .8rem;
+    align-items: center;
+    padding: .4rem .5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--color-white);
+    gap: .5rem;
+}
+
+.eventHeader .eventWrapper .eventSummary .eventDetails .share .icon {
+    width: 25px;
+    height: 25px;
+}
+
 .eventHeader .eventWrapper .buyTicket {
     display: flex;
     padding: 1rem 2rem;
@@ -96,6 +135,31 @@
     height: 5px;
     background-color: rgb(113, 165, 237);
     border-radius: 1rem;
+}
+
+.buyTicketContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.buyTicketContainer button {
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--color-white);
+    font-weight: 550;
+    border: none;
+    background-color: rgb(113, 165, 237);
+    border-radius: 6px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.buyTicketContainer button:disabled {
+    background-color: var(--color-primary-variant);
+    cursor: no-drop;
+
 }
 
 @media (max-width: 900px) {

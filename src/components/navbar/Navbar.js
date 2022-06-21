@@ -24,7 +24,7 @@ export default function Navbar() {
                 <div className='navbarMenu'>
                     <ul>
                         <li>
-                            <Link to="#">Bul</Link>
+                            <Link to="/search">Bul</Link>
                         </li>
                         <li>
                             <Link to="#">Favoriler</Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
                 <div className='navbarMenu'>
                     <ul>
                         <li>
-                            <Link to="#">Bul</Link>
+                            <Link to="/search">Bul</Link>
                         </li>
                         <li>
                             <Link to="#">Favoriler</Link>

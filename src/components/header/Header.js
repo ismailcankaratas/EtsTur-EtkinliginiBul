@@ -14,12 +14,10 @@ import useFetch from '../../hooks/useFetch';
 import Select from 'react-select'
 import { useNavigate } from "react-router-dom";
 import { errorNotification } from '../../App';
+import { handleSearchUrl } from '../../helpers/functions';
+import Popup from './../popup/Popup';
 
-export const handleSearchUrl = (localtionSelect, categorySelect, date) => {
-    const startDate = `${format(date[0].startDate, "MM/dd/yyyy")}`;
-    const endDate = `${format(date[0].endDate, "MM/dd/yyyy")}`;
-    return `/search?localtionId=${localtionSelect}&categoryId=${categorySelect}&startDate=${startDate}&endDate=${endDate}`;
-}
+
 export default function Header() {
     const navigate = useNavigate();
     const categories = useFetch("/data/db.json", "categories");
@@ -38,6 +36,7 @@ export default function Header() {
             key: "selection",
         },
     ]);
+    const [popup, setPopup] = useState(false);
 
     useEffect(() => {
         addOptions(categoriesOptions, categories.data, setCategoriesOptions);
@@ -75,9 +74,7 @@ export default function Header() {
                     <img src="/header.png" alt="" />
                 </div>
             </div>
-
-
-            <div className="headerSearchContainer">
+            <Popup popup={popup} setPopup={setPopup}>
                 <div className='headerSearch'>
                     <div className="headerSearchItem">
                         <BiCategory className='icon' />
@@ -119,8 +116,52 @@ export default function Header() {
                         </button>
                     </div>
                 </div>
+            </Popup>
 
-                <div className='headerSearchMobile'>
+            <div className="headerSearchContainer">
+                <div className='headerSearch mobile'>
+                    <div className="headerSearchItem">
+                        <BiCategory className='icon' />
+                        <Select options={categoriesOptions} placeholder="Kategori seçiniz"
+                            onChange={(select) => handleSelectChange(select, setCategorySelect)} />
+                    </div>
+                    <div className="headerSearchItem">
+                        <MdDateRange className='icon' />
+                        <span
+                            onClick={() => setOpenDate(!openDate)}
+                            className="headerSearchText"
+                        >
+                            {`Tarih: ${format(date[0].startDate, "MM/dd/yyyy")} - ${format(
+                                date[0].endDate,
+                                "MM/dd/yyyy"
+                            )}`}
+                        </span>
+                        {openDate && (
+                            <DateRange
+                                editableDateInputs={true}
+                                onChange={(item) => setDate([item.selection])}
+                                moveRangeOnFirstSelection={false}
+                                ranges={date}
+                                className="date"
+                                minDate={new Date()}
+                            />
+                        )}
+                    </div>
+                    <div className="headerSearchItem">
+                        <HiOutlineLocationMarker className='icon' />
+                        <Select options={localtionsOptions} placeholder="Konum seçiniz"
+                            onChange={(select) => handleSelectChange(select, setLocaltionSelect)}
+                        />
+                    </div>
+
+                    <div className="headerSearchItem" id='headerBtn' onClick={() => handleActivitySearch(localtionSelect, categorySelect, date)}>
+                        <button className="headerBtn">
+                            Ara
+                        </button>
+                    </div>
+                </div>
+
+                <div className='headerSearchMobile' onClick={() => setPopup(!popup)}>
                     <AiOutlineSearch />
                     Ara
                 </div>

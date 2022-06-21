@@ -104,7 +104,8 @@
     align-items: center;
 
     width: var(--container-width-ms);
-    background-color: var(--color-white);
+    background-color: var(--color-primary-variant);
+    color: var(--color-white);
     margin: 0 auto;
     border-radius: 1rem;
     padding: 1rem;
@@ -112,8 +113,12 @@
     gap: .5rem;
 }
 
+.popupContent .headerSearch {
+    flex-direction: column;
+}
+
 @media (max-width: 600px) {
-    .headerSearch {
+    .mobile {
         display: none;
     }
 

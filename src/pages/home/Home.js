@@ -1,25 +1,29 @@
 import React from 'react'
 import './home.css'
-import PopulerActivity from '../../components/populerActivity/PopulerActivity';
 import Header from '../../components/header/Header';
+import ActivitiesSlider from '../../components/activitiesSlider/ActivitiesSlider';
+import useFetch from '../../hooks/useFetch';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
+  const activities = useFetch("/data/db.json", "activities")
+
   return (
     <>
       <Header />
       <div className='content'>
         <div className='categories'>
-          <a href='/konser' className='category' id='konser'>
+          <Link to='/search?localtionId=&categoryId=DRxvz293sl&startDate=&endDate=' className='category' id='konser'>
             KONSER
-          </a>
-          <a href='/stand-up' className='category' id='standUp'>
+          </Link>
+          <Link to='/search?localtionId=&categoryId=Ulu2KgoWfw&startDate=&endDate=' className='category' id='standUp'>
             STAND UP
-          </a>
-          <a href='/tiyatro' className='category' id='tiyatro'>
+          </Link>
+          <Link to='/search?localtionId=&categoryId=b5Pdw5_W2r&startDate=&endDate=' className='category' id='tiyatro'>
             TİYATRO
-          </a>
+          </Link>
         </div>
-        <PopulerActivity />
+        <ActivitiesSlider activities={activities} title="En Popüler Etkinlikler" />
       </div>
     </>
   )

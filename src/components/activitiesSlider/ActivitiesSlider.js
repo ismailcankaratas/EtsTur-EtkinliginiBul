@@ -1,28 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
-import './populerActivity.css'
+import './activitiesSlider.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdDateRange } from 'react-icons/md';
 import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
+import { dateToString } from '../../helpers/functions';
 
-
-export const dateToString = (date) => {
-    var tarih = new Date(date);
-    var gunler = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
-    var aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
-    return `${tarih.getDate()} ${aylar[tarih.getMonth()]} ${gunler[tarih.getDay()]}`
-}
-
-export default function PopulerActivity() {
-    const activities = useFetch("/data/db.json", "activities")
+export default function ActivitiesSlider({ activities, title, similarActivities }) {
     const categories = useFetch("/data/db.json", "categories")
-
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: activities.data.length < 4 ? 2 : 4,
         slidesToScroll: 2,
         autoplay: true,
         speed: 2000,
@@ -55,11 +46,14 @@ export default function PopulerActivity() {
             }
         ]
     };
-
-
+    useEffect(() => {
+        if (similarActivities) {
+            activities.data = activities.data.filter(x => x.categoryId == similarActivities)
+        }
+    }, [activities]);
     return (
         <div className='eventSlider'>
-            <h2>En Popüler Etkinlikler </h2>
+            <h2>{title}</h2>
             <Slider {...settings}>
                 {
                     activities.data.map(event => (
