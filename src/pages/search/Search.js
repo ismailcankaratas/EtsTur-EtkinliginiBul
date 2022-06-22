@@ -7,6 +7,7 @@ import { format } from 'date-fns';
 import { MdDateRange } from 'react-icons/md';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { BsFilterSquareFill } from 'react-icons/bs';
+import { AiOutlineClose } from 'react-icons/ai';
 
 import { useNavigate } from 'react-router-dom';
 import { dateToString, handleSearchUrl } from '../../helpers/functions';
@@ -43,7 +44,7 @@ export default function Search() {
 
     useEffect(() => {
         const dataFilter = (data, setNewActivities, localtionId, categoryId, startDate, endDate) => {
-            setNewActivities(data.filter(x => x.localtionsId == localtionId && x.categoryId == categoryId && x.date >= startDate && x.date <= endDate));
+            setNewActivities(data.filter(x => localtionId ? x.localtionsId == localtionId : "" && categoryId ? x.categoryId == categoryId : "" && startDate ? x.date >= startDate : "" && endDate ? x.date <= endDate : ""));
         }
         if (query.search) {
             dataFilter(activities.data, setNewActivities, localtionId, categoryId, startDate, endDate)
@@ -114,14 +115,19 @@ export default function Search() {
                                             )}`}
                                         </span>
                                         {openDate && (
-                                            <DateRange
-                                                editableDateInputs={true}
-                                                onChange={(item) => setDate([item.selection])}
-                                                moveRangeOnFirstSelection={false}
-                                                ranges={date}
-                                                className="date"
-                                                minDate={new Date()}
-                                            />
+                                            <div className='dateContainer'>
+                                                <span className='close' onClick={() => setOpenDate(!openDate)}>
+                                                    KAPAT <AiOutlineClose className='icon' />
+                                                </span>
+                                                < DateRange
+                                                    editableDateInputs={true}
+                                                    onChange={(item) => setDate([item.selection])}
+                                                    moveRangeOnFirstSelection={false}
+                                                    ranges={date}
+                                                    className="date"
+                                                    minDate={new Date()}
+                                                />
+                                            </div>
                                         )}
                                     </div>
                                 </div>
@@ -184,14 +190,19 @@ export default function Search() {
                                         )}`}
                                     </span>
                                     {openDate && (
-                                        <DateRange
-                                            editableDateInputs={true}
-                                            onChange={(item) => setDate([item.selection])}
-                                            moveRangeOnFirstSelection={false}
-                                            ranges={date}
-                                            className="date"
-                                            minDate={new Date()}
-                                        />
+                                        <div className='dateContainer'>
+                                            <span className='close' onClick={() => setOpenDate(!openDate)}>
+                                                KAPAT <AiOutlineClose className='icon' />
+                                            </span>
+                                            < DateRange
+                                                editableDateInputs={true}
+                                                onChange={(item) => setDate([item.selection])}
+                                                moveRangeOnFirstSelection={false}
+                                                ranges={date}
+                                                className="date"
+                                                minDate={new Date()}
+                                            />
+                                        </div>
                                     )}
                                 </div>
                             </div>

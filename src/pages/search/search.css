@@ -147,6 +147,39 @@
     padding: .5rem;
 }
 
+.date {
+    left: 0rem;
+}
+
+.filterItem span {
+    cursor: pointer;
+}
+
+.dateContainer {
+    position: absolute;
+    top: 50px;
+    z-index: 2;
+}
+
+.dateContainer .close {
+    width: 332px;
+    z-index: 10;
+    top: -1.8rem;
+    right: 0;
+    background-color: rgb(113, 165, 237);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border-radius: 6px 6px 0rem 0rem;
+    cursor: pointer;
+}
+
+.dateContainer .close .icon {
+    width: 25px;
+    height: 25px;
+}
+
 @media (max-width:768px) {
     .activitySearchContainer {
         flex-direction: column;
@@ -158,6 +191,10 @@
 
     .mobileFilters {
         display: block;
+    }
+
+    .dateContainer {
+        right: 1rem;
     }
 
 }

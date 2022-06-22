@@ -2,26 +2,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 3rem;
-    margin: 2rem 0rem;
 }
 
 .categories .category {
+    width: 30%;
+    padding: 2rem 0rem;
     display: flex;
-    flex: 1;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
     font-weight: 500;
     color: var(--color-white);
-    padding: 2rem;
-    border-radius: 2rem;
+    border-radius: .75rem;
+
     text-align: center;
     transition: var(--transition);
-
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .categories .category:hover {
@@ -41,17 +35,4 @@
 #tiyatro {
     background-color: rgba(107, 252, 118, 0.8);
     /* background-image: url("https://kdaidggt0f3v.merlincdn.net/Uploads/Films/yaz-sezonu-cocuk-etkinlikleri-bavulumda-kuklalar-muzikli-kukla-tiyatrosu-202267163831.png"); */
-}
-
-@media (max-width: 600px) {
-    .categories {
-        gap: 1rem
-    }
-
-}
-
-@media (max-width: 425px) {
-    .categories .category {
-        aspect-ratio: auto;
-    }
 }

@@ -14,6 +14,7 @@ export default function Activity() {
     const categories = useFetch("/data/db.json", "categories")
     const localtions = useFetch("/data/db.json", "localtions")
     const activity = activities.data.find(x => x.id == params.id);
+
     const [popup, setPopup] = useState(false);
     const [ticketPricesOptions, setTicketPricesOptions] = useState([]);
     const [selectTicket, setselectTicket] = useState({});
@@ -154,7 +155,7 @@ export default function Activity() {
             <div style={{ margin: "1rem" }}>
                 {
                     activities.loading == false ?
-                        <ActivitiesSlider activities={activities} title="Benzer Etkinlikler" similarActivities={activity.categoryId} />
+                        <ActivitiesSlider activities={activities} title="Benzer Etkinlikler" filter={x => x.categoryId == activity.categoryId} />
                         : ""
                 }
             </div>

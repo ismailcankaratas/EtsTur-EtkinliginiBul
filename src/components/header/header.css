@@ -56,12 +56,6 @@
     flex: 1;
 }
 
-.date {
-    position: absolute;
-    top: 50px;
-    z-index: 2;
-}
-
 .headerSearchText {
     cursor: pointer;
     color: var(--color-white);
@@ -128,5 +122,17 @@
 
     .headerImg {
         display: none;
+    }
+
+    .dateContainer {
+        top: 40% !important;
+        left: 25%;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .dateContainer {
+        left: 0rem;
     }
 }

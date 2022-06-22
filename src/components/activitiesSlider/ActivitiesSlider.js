@@ -8,7 +8,7 @@ import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
 import { dateToString } from '../../helpers/functions';
 
-export default function ActivitiesSlider({ activities, title, similarActivities }) {
+export default function ActivitiesSlider({ activities, title, filter }) {
     const categories = useFetch("/data/db.json", "categories")
     const settings = {
         dots: true,
@@ -47,8 +47,8 @@ export default function ActivitiesSlider({ activities, title, similarActivities 
         ]
     };
     useEffect(() => {
-        if (similarActivities) {
-            activities.data = activities.data.filter(x => x.categoryId == similarActivities)
+        if (filter) {
+            activities.data = activities.data.filter(filter)
         }
     }, [activities]);
     return (

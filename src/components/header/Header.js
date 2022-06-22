@@ -7,6 +7,7 @@ import { MdDateRange } from 'react-icons/md';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { BiCategory } from 'react-icons/bi';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai';
 
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
@@ -93,14 +94,19 @@ export default function Header() {
                             )}`}
                         </span>
                         {openDate && (
-                            <DateRange
-                                editableDateInputs={true}
-                                onChange={(item) => setDate([item.selection])}
-                                moveRangeOnFirstSelection={false}
-                                ranges={date}
-                                className="date"
-                                minDate={new Date()}
-                            />
+                            <div className='dateContainer'>
+                                <span className='close' onClick={() => setOpenDate(!openDate)}>
+                                    KAPAT <AiOutlineClose className='icon' />
+                                </span>
+                                < DateRange
+                                    editableDateInputs={true}
+                                    onChange={(item) => setDate([item.selection])}
+                                    moveRangeOnFirstSelection={false}
+                                    ranges={date}
+                                    className="date"
+                                    minDate={new Date()}
+                                />
+                            </div>
                         )}
                     </div>
                     <div className="headerSearchItem">
@@ -137,14 +143,19 @@ export default function Header() {
                             )}`}
                         </span>
                         {openDate && (
-                            <DateRange
-                                editableDateInputs={true}
-                                onChange={(item) => setDate([item.selection])}
-                                moveRangeOnFirstSelection={false}
-                                ranges={date}
-                                className="date"
-                                minDate={new Date()}
-                            />
+                            <div className='dateContainer'>
+                                <span className='close' onClick={() => setOpenDate(!openDate)}>
+                                    KAPAT <AiOutlineClose className='icon' />
+                                </span>
+                                < DateRange
+                                    editableDateInputs={true}
+                                    onChange={(item) => setDate([item.selection])}
+                                    moveRangeOnFirstSelection={false}
+                                    ranges={date}
+                                    className="date"
+                                    minDate={new Date()}
+                                />
+                            </div>
                         )}
                     </div>
                     <div className="headerSearchItem">
